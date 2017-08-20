@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+{% load static %}﻿
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %} ">
+
+</head>
+<body>
+<div id="qqq">Мой чудесный супер сайт!!!</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-lg-offset-4">
+            <h1 class="title">наш магазин скоро откроется</h1>
+            <h1 class="title">Оставляйте Ваш email в форме ниже</h1>
+        </div>
+    </div>
+</div>
+
+<form action="/cgi-bin/form.py" method="post" >
+{% csrf_token %}
+        <input type="text" name="TEXT_1">
+        <input type="text" name="TEXT_2">
+        <input type="submit" value="отправить">
+    </form>
+
+<form action="/python/" method="post">
+    {% csrf_token %}
+  <p><b>Введите ваш текст:</b></p>
+  <p><textarea rows="10" cols="45" name="text"> </textarea></p>
+  <p><input type="submit" value="Отправить"></p>
+</form>
+
+</body>
+</html>
